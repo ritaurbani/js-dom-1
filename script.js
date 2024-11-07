@@ -1,28 +1,38 @@
 
 //preleva img
 
-const offLamp = document.getElementById("white-lamp");
-console.log(offLamp);
-
-const onLamp = document.getElementById("yellow-lamp");
-console.log(onLamp);
+const lampElement= document.querySelector(".lamp");
+console.log(lampElement);
 
 //preleva btn
 
-const offBtnElem = document.getElementById("turnon-btn");
-console.log(offBtnElem);
+const turnOnBtnElem = document.querySelector(".turnon-btn");
+console.log(turnOnBtnElem);
 
-const onBtnElem = document.getElementById("turnoff-btn");
-console.log(onBtnElem);
+// const turnOffBtnElem = document.querySelector(".turnoff-btn");
+// console.log(turnOffBtnElem);
 
 //add event reaction
 
-offBtnElem.addEventListener("click", function() {
-    onLamp.classList.add("active");
+// turnOnBtnElem.addEventListener("click", function() {
+//     lampElement.src ="./img/yellow_lamp.png"
 
-})
+// })
 
-onBtnElem.addEventListener("click", function(){
-    offLamp.classList.remove("active");
+// turnOffBtnElem.addEventListener("click", function() {
+//     lampElement.src = "./img/white_lamp.png"
+
+// })
+
+turnOnBtnElem.addEventListener("click", function () {
+    console.log(turnOnBtnElem.innerHTML)
+    console.log(lampElement.src)
+    if (turnOnBtnElem.innerHTML === "Accendi") {
+        lampElement.src = "./img/yellow_lamp.png"
+        turnOnBtnElem.innerHTML = "Spegni"
+    } else if (turnOnBtnElem.innerHTML === "Spegni"){
+        lampElement.src = "./img/white_lamp.png"
+        turnOnBtnElem.innerHTML = "Accendi"
+    }
 
 })
